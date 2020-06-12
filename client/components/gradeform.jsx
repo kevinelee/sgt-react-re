@@ -8,16 +8,47 @@ export default class GradeForm extends React.Component {
       course: '',
       grade: ''
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleReset = this.handleReset.bind(this);
+  }
+
+  handleChange(event) {
+    const { name, value } = event.target;
+
+    this.setState(() => {
+      return { [name]: value };
+    });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    const { name, course, grade } = this.state;
+    if (name && course && grade) {
+      this.props.addGrade(this.state);
+      this.handleReset();
+    }
+  }
+
+  handleReset(event) {
+    this.setState(() => {
+      return {
+        name: '',
+        course: '',
+        grade: ''
+      };
+    });
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} onReset={this.handleReset}>
         <label>
           Name:
           <input
             type="text"
-            value={this.state.value}
+            name="name"
+            value={this.state.name}
             onChange={this.handleChange}
           />
         </label>
@@ -25,7 +56,8 @@ export default class GradeForm extends React.Component {
           Course:
           <input
             type="text"
-            value={this.state.value}
+            name="course"
+            value={this.state.course}
             onChange={this.handleChange}
           />
         </label>
@@ -33,11 +65,13 @@ export default class GradeForm extends React.Component {
           Grade:
           <input
             type="text"
-            value={this.state.value}
+            name="grade"
+            value={this.state.grade}
             onChange={this.handleChange}
           />
         </label>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Add" />
+        <input type="reset" value="Clear" />
       </form>
     );
   }
