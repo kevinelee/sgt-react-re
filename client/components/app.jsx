@@ -47,14 +47,16 @@ class App extends React.Component {
     })
       .then(res => res.json())
       .then(gradeFromServer => {
-        this.setState(prevState => {
-          const grades = prevState.grades.concat(gradeFromServer);
-          return {
-            grades
-          };
-        }, () => this.getAverageGrade());
+        this.setState(
+          prevState => {
+            const grades = prevState.grades.concat(gradeFromServer);
+            return {
+              grades
+            };
+          },
+          () => this.getAverageGrade()
+        );
       });
-
   }
 
   render() {
