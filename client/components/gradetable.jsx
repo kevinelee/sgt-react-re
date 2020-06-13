@@ -6,7 +6,7 @@ export default class GradeTable extends React.Component {
 
   render() {
     return (
-      <table className="table table-striped">
+      <table className="table table-striped col-9">
         <thead className="thead-light">
           <tr>
             <th scope="col">Student Name</th>
