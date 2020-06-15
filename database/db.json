@@ -17,12 +17,6 @@
       "name": "Douglas Crockford",
       "course": "JavaScript",
       "grade": 100
-    },
-    {
-      "name": "kevin",
-      "course": "yes",
-      "grade": 100,
-      "id": 33
     }
   ]
 }
