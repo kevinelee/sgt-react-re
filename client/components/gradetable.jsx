@@ -12,6 +12,7 @@ export default class GradeTable extends React.Component {
             <th scope="col">Student Name</th>
             <th scope="col">Course</th>
             <th scope="col">Grade</th>
+            <th scope="col">Operations</th>
           </tr>
         </thead>
         <tbody>
@@ -23,6 +24,8 @@ export default class GradeTable extends React.Component {
                   name={grade.name}
                   course={grade.course}
                   grade={grade.grade}
+                  delete={this.props.deleteGrade}
+                  id={grade.id}
                 />
               );
             })
