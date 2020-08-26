@@ -42,8 +42,12 @@ export default class GradeForm extends React.Component {
 
   render() {
     return (
-      <div className="col-3">
-        <form onSubmit={this.handleSubmit} onReset={this.handleReset}>
+      <div className="col-3 form-div">
+        <form
+          className="form"
+          onSubmit={this.handleSubmit}
+          onReset={this.handleReset}
+        >
           <label>
             <span
               className="input-group-text fas fa-user p-2"
@@ -86,7 +90,7 @@ export default class GradeForm extends React.Component {
             />
           </label>
 
-          <div>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
             <input type="submit" value="Add" className="button" />
             <input type="reset" value="Clear" className="button" />
           </div>

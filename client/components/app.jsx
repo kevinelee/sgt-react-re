@@ -79,7 +79,7 @@ class App extends React.Component {
     return (
       <div>
         <Header averageGrade={this.state.averageGrade} />
-        <div className="row">
+        <div className="row grade-table">
           <GradeTable
             grades={this.state.grades}
             deleteGrade={this.deleteGrade}

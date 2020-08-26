@@ -6,10 +6,10 @@ export default class Header extends React.Component {
 
     return (
       <>
-        <header className="row justify-content-between">
-          <h1 className="col-10">Student Grade Table</h1>
-          <div className="col-2">
-            Average Grade
+        <header className="row">
+          <h1 className="col-9">Student Grade Table</h1>
+          <div className="col-3 average-grade">
+            Average Grade: &nbsp;
             <span className="badge badge-secondary">
               {this.props.averageGrade}
             </span>
